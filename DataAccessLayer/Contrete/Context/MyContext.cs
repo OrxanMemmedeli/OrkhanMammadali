@@ -28,6 +28,7 @@ namespace DataAccessLayer.Contrete.Context
         public DbSet<Project> Projects { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Sosial> Sosials { get; set; }
+        public DbSet<Adress> Adresses { get; set; }
 
     }
 }

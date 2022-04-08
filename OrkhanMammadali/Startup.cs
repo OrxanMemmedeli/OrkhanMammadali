@@ -1,4 +1,3 @@
-using DataAccessLayer.Contrete.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

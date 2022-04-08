@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -22,24 +23,24 @@ namespace BusinessLayer.Concrete
             _sosialDal.Delete(t);
         }
 
-        public Sosial Get(Expression<Func<Sosial, bool>> filter)
+        public async Task<Sosial> Get(Expression<Func<Sosial, bool>> filter)
         {
-            return _sosialDal.Get(filter);
+            return await _sosialDal.Get(filter);
         }
 
-        public List<Sosial> GetAll()
+        public async Task<List<Sosial>> GetAll()
         {
-            return _sosialDal.GetAll();
+            return await _sosialDal.GetAll();
         }
 
-        public List<Sosial> GetAll(Expression<Func<Sosial, bool>> filter)
+        public async Task<List<Sosial>> GetAll(Expression<Func<Sosial, bool>> filter)
         {
-            return _sosialDal.GetAll(filter);
+            return await _sosialDal.GetAll(filter);
         }
 
-        public Sosial GetById(int id)
+        public async Task<Sosial> GetById(Guid id)
         {
-            return _sosialDal.GetById(id);
+            return await _sosialDal.GetById(id);
         }
 
         public void Insert(Sosial t)

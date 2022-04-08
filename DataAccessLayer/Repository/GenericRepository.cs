@@ -1,10 +1,12 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Contrete.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repository
 {
@@ -20,26 +22,26 @@ namespace DataAccessLayer.Repository
             Save();
         }
 
-        public T Get(Expression<Func<T, bool>> filter)
+        public async Task<T> Get(Expression<Func<T, bool>> filter)
         {
-            return _context.Set<T>().FirstOrDefault(filter);
+            return await _context.Set<T>().FirstOrDefaultAsync(filter);
         }
 
-        public List<T> GetAll()
+        public async Task<List<T>> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return await _context.Set<T>().ToListAsync();
         }
 
-        public List<T> GetAll(Expression<Func<T, bool>> filter)
+        public async Task<List<T>> GetAll(Expression<Func<T, bool>> filter)
         {
             return filter == null
-             ? _context.Set<T>().ToList()
-             : _context.Set<T>().Where(filter).ToList();
+             ? await _context.Set<T>().ToListAsync()
+             : await _context.Set<T>().Where(filter).ToListAsync();
         }
 
-        public T GetById(int id)
+        public async Task<T> GetById(Guid id)
         {
-            return _context.Set<T>().Find(id);
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public void Insert(T t)
@@ -56,7 +58,7 @@ namespace DataAccessLayer.Repository
 
         private void Save()
         {
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
         }
     }
 }

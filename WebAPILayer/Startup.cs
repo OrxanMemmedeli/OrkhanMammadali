@@ -27,6 +27,7 @@ namespace WebAPILayer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.Register();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPILayer", Version = "v1" });

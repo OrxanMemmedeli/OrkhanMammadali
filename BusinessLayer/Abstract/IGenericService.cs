@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
@@ -10,9 +11,9 @@ namespace BusinessLayer.Abstract
         void Insert(T t);
         void Update(T t);
         void Delete(T t);
-        List<T> GetAll();
-        T GetById(int id);
-        T Get(Expression<Func<T, bool>> filter);
-        List<T> GetAll(Expression<Func<T, bool>> filter);
+        Task<List<T>> GetAll();
+        Task<T> GetById(Guid id);
+        Task<T> Get(Expression<Func<T, bool>> filter);
+        Task<List<T>> GetAll(Expression<Func<T, bool>> filter);
     }
 }

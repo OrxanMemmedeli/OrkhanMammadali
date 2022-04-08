@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -22,24 +23,24 @@ namespace BusinessLayer.Concrete
             _cvDocumentDal.Delete(t);
         }
 
-        public CVDocument Get(Expression<Func<CVDocument, bool>> filter)
+        public async Task<CVDocument> Get(Expression<Func<CVDocument, bool>> filter)
         {
-            return _cvDocumentDal.Get(filter);
+            return await _cvDocumentDal.Get(filter);
         }
 
-        public List<CVDocument> GetAll()
+        public async Task<List<CVDocument>> GetAll()
         {
-            return _cvDocumentDal.GetAll();
+            return await _cvDocumentDal.GetAll();
         }
 
-        public List<CVDocument> GetAll(Expression<Func<CVDocument, bool>> filter)
+        public async Task<List<CVDocument>> GetAll(Expression<Func<CVDocument, bool>> filter)
         {
-            return _cvDocumentDal.GetAll(filter);
+            return await _cvDocumentDal.GetAll(filter);
         }
 
-        public CVDocument GetById(int id)
+        public async Task<CVDocument> GetById(Guid id)
         {
-            return _cvDocumentDal.GetById(id);
+            return await _cvDocumentDal.GetById(id);
         }
 
         public void Insert(CVDocument t)

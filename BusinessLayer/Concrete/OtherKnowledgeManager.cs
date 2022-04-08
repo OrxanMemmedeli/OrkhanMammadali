@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -22,24 +23,24 @@ namespace BusinessLayer.Concrete
             _otherKnowledgeDal.Delete(t);
         }
 
-        public OtherKnowledge Get(Expression<Func<OtherKnowledge, bool>> filter)
+        public async Task<OtherKnowledge> Get(Expression<Func<OtherKnowledge, bool>> filter)
         {
-            return _otherKnowledgeDal.Get(filter);
+            return await _otherKnowledgeDal.Get(filter);
         }
 
-        public List<OtherKnowledge> GetAll()
+        public async Task<List<OtherKnowledge>> GetAll()
         {
-            return _otherKnowledgeDal.GetAll();
+            return await _otherKnowledgeDal.GetAll();
         }
 
-        public List<OtherKnowledge> GetAll(Expression<Func<OtherKnowledge, bool>> filter)
+        public async Task<List<OtherKnowledge>> GetAll(Expression<Func<OtherKnowledge, bool>> filter)
         {
-            return _otherKnowledgeDal.GetAll(filter);
+            return await _otherKnowledgeDal.GetAll(filter);
         }
 
-        public OtherKnowledge GetById(int id)
+        public async Task<OtherKnowledge> GetById(Guid id)
         {
-            return _otherKnowledgeDal.GetById(id);
+            return await _otherKnowledgeDal.GetById(id);
         }
 
         public void Insert(OtherKnowledge t)

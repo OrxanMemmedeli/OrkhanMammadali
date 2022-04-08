@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -22,24 +23,24 @@ namespace BusinessLayer.Concrete
             _experienceDal.Delete(t);
         }
 
-        public Experience Get(Expression<Func<Experience, bool>> filter)
+        public async Task<Experience> Get(Expression<Func<Experience, bool>> filter)
         {
-            return _experienceDal.Get(filter);
+            return await _experienceDal.Get(filter);
         }
 
-        public List<Experience> GetAll()
+        public async Task<List<Experience>> GetAll()
         {
-            return _experienceDal.GetAll();
+            return await _experienceDal.GetAll();
         }
 
-        public List<Experience> GetAll(Expression<Func<Experience, bool>> filter)
+        public async Task<List<Experience>> GetAll(Expression<Func<Experience, bool>> filter)
         {
-            return _experienceDal.GetAll(filter);
+            return await _experienceDal.GetAll(filter);
         }
 
-        public Experience GetById(int id)
+        public async Task<Experience> GetById(Guid id)
         {
-            return _experienceDal.GetById(id);
+            return await _experienceDal.GetById(id);
         }
 
         public void Insert(Experience t)

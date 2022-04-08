@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -22,24 +23,24 @@ namespace BusinessLayer.Concrete
             _skillDal.Delete(t);
         }
 
-        public Skill Get(Expression<Func<Skill, bool>> filter)
+        public async Task<Skill> Get(Expression<Func<Skill, bool>> filter)
         {
-            return _skillDal.Get(filter);
+            return await _skillDal.Get(filter);
         }
 
-        public List<Skill> GetAll()
+        public async Task<List<Skill>> GetAll()
         {
-            return _skillDal.GetAll();
+            return await _skillDal.GetAll();
         }
 
-        public List<Skill> GetAll(Expression<Func<Skill, bool>> filter)
+        public async Task<List<Skill>> GetAll(Expression<Func<Skill, bool>> filter)
         {
-            return _skillDal.GetAll(filter);
+            return await _skillDal.GetAll(filter);
         }
 
-        public Skill GetById(int id)
+        public async Task<Skill> GetById(Guid id)
         {
-            return _skillDal.GetById(id);
+            return await _skillDal.GetById(id);
         }
 
         public void Insert(Skill t)

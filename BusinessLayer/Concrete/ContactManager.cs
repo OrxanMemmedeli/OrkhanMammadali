@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -22,24 +23,24 @@ namespace BusinessLayer.Concrete
             _contactDal.Delete(t);
         }
 
-        public Contact Get(Expression<Func<Contact, bool>> filter)
+        public async Task<Contact> Get(Expression<Func<Contact, bool>> filter)
         {
-            return _contactDal.Get(filter);
+            return await _contactDal.Get(filter);
         }
 
-        public List<Contact> GetAll()
+        public async Task<List<Contact>> GetAll()
         {
-            return _contactDal.GetAll();
+            return await _contactDal.GetAll();
         }
 
-        public List<Contact> GetAll(Expression<Func<Contact, bool>> filter)
+        public async Task<List<Contact>> GetAll(Expression<Func<Contact, bool>> filter)
         {
-            return _contactDal.GetAll(filter);
+            return await _contactDal.GetAll(filter);
         }
 
-        public Contact GetById(int id)
+        public async Task<Contact> GetById(Guid id)
         {
-            return _contactDal.GetById(id);
+            return await _contactDal.GetById(id);
         }
 
         public void Insert(Contact t)

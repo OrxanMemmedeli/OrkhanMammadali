@@ -13,8 +13,6 @@ namespace EntityLayer.Concrete
         public string Description { get; set; }
         public string LogoURL { get; set; }
 
-        [NotMapped]
-        public IFormFile File { get; set; }
         public string Pozition { get; set; }
     }
 }

@@ -10,7 +10,5 @@ namespace EntityLayer.Concrete
     public class CVDocument : MainProperties
     {
         public string fileURL { get; set; }
-        [NotMapped]
-        public IFormFile File { get; set; }
     }
 }

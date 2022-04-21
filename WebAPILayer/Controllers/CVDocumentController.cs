@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BusinessLayer.Abstract;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,5 +13,67 @@ namespace WebAPILayer.Controllers
     [ApiController]
     public class CVDocumentController : ControllerBase
     {
+        private readonly ICVDocumentService _cVDocumentService;
+
+        public CVDocumentController(ICVDocumentService cVDocumentService)
+        {
+            _cVDocumentService = cVDocumentService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CVDocument>>> GetcVDocuments()
+        {
+            return await _cVDocumentService.GetAll();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CVDocument>> GetcVDocument(Guid id)
+        {
+            var cVDocument = await _cVDocumentService.GetById(id);
+
+            if (cVDocument == null)
+            {
+                return NotFound();
+            }
+
+            return cVDocument;
+        }
+
+
+        [HttpPut("{id}")]
+        public IActionResult PutcVDocument(Guid id, CVDocument cVDocument)
+        {
+            if (id != cVDocument.Id)
+            {
+                return BadRequest();
+            }
+
+
+            _cVDocumentService.Update(cVDocument);
+
+            return NoContent();
+        }
+
+        [HttpPost]
+        public ActionResult<CVDocument> PostcVDocument(CVDocument cVDocument)
+        {
+            _cVDocumentService.Insert(cVDocument);
+
+            return CreatedAtAction("GetcVDocument", new { id = cVDocument.Id }, cVDocument);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletecVDocument(Guid id)
+        {
+            var cVDocument = await _cVDocumentService.GetById(id);
+            if (cVDocument == null)
+            {
+                return NotFound();
+            }
+
+            _cVDocumentService.Delete(cVDocument);
+
+            return NoContent();
+        }
     }
 }

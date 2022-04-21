@@ -26,7 +26,6 @@ namespace WebAPILayer
             services.AddTransient<IProjectService, ProjectManager>().AddTransient<IProjectDal, EFProjectRepository>();
             services.AddTransient<ISkillService, SkillManager>().AddTransient<ISkillDal, EFSkillRepository>();
             services.AddTransient<ISosialService, SosialManager>().AddTransient<ISosialDal, EFSosialRepository>();
-            services.AddTransient<IAdressService, AdressManager>().AddTransient<IAdeessDal, EFAdressRepository>();
         }
     }
 }

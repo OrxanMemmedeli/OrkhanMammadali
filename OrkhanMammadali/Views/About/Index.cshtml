@@ -1,8 +1,71 @@
-﻿
+﻿@model IEnumerable<OrkhanMammadali.Models.ViewModel.AboutViewModel>
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "About";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>About</h1>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pozition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerCount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.Raw(item.Pozition)
+            </td>
+            <td>
+                @Html.Raw(item.Info)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Experience)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCount)
+            </td>
+            <td>
+                <a href="/About/Edit/@item.Id">Edit</a> |
+                <a href="/About/Delete/@item.Id" onclick="return confirm('Seçdiyiniz sətr silinəcək. Silinən məlumatların geri qaytarılması mümkün deyil. \nSətiri yənədə silmək istəyirsinizmi?')">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,8 +1,839 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <meta property="og:image" content="https://i.ibb.co/7zdy6mn/KHAN.jpg" />
+    <meta property="og:description" content="Orxan Məmmədəli - online portfolio" />
+    <meta property="og:title" content="KHAN" />
+    <link rel="shortcut icon" href="favicons/KHAN.png" />
+
+    <title>KHAN - Orxan Məmmədəli</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" type="text/css">
+
+    <!-- Stylesheet
+    ============================== -->
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="~/css/animate-animate.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="~/css/css-bootstrap.min.css">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" type="text/css" href="~/css/css-all.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" type="text/css" href="~/css/assets-owl.carousel.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" type="text/css" href="~/css/magnific-popup-magnific-popup.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="~/css/css-stylesheet.css">
+    <!-- Colors Css -->
+    <link id="color-switcher" type="text/css" rel="stylesheet" href="~/css/kenil-#">
+
+
+</head>
+
+<body class="side-header" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="1">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <!-- Preloader End -->
+    <!-- Document Wrapper
+    =============================== -->
+    <div id="main-wrapper">
+        <!-- Header
+        ============================ -->
+        <header id="header" class="sticky-top">
+            <!-- Navbar -->
+            <nav class="primary-menu navbar navbar-expand-lg">
+                <div class="container position-relative h-100 flex-lg-column justify-content-lg-center px-3 p-lg-4">
+                    <!-- Logo -->
+                    <a class="logo text-center d-lg-block mt-lg-3 mb-lg-4" href="#home" title=""> <img src="~/favicons/KHAN-row.png" alt="Kenil Patel"> </a>
+                    <!-- Logo End -->
+                    <hr class="d-none d-lg-block m-0 w-25">
+                    <div id="header-nav" class="collapse navbar-collapse w-100">
+                        <ul class="navbar-nav my-lg-auto text-lg-center">
+                            <li class="nav-item"><a class="nav-link smooth-scroll active" href="#home">#</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Haqqımda</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#services">Təhsil və Təcrübə</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#why-choose">Bilik və Bacarıqlar</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfelim</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#clients">Müştərilər</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Əlaqə</a></li>
+                        </ul>
+                    </div>
+                    <hr class="d-none d-lg-block m-0 w-25">
+                    <ul class="social-icons social-icons-sm mt-lg-4 d-none d-sm-flex">
+                        <!--  <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                         <li class="social-icons-twitter"><a data-bs-toggle="tooltip" href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                         <li class="social-icons-google"><a data-bs-toggle="tooltip" href="http://www.google.com/" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
+                         <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="http://www.dribbble.com/" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a></li>-->
+                        <li class="social-icons-github"><a data-bs-toggle="tooltip" href="https://github.com/OrxanMemmedeli" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+                        <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="https://az.linkedin.com/in/orkhan-8216123?trk=profile-badge" target="_blank" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                    @*<a href='https://thesiswritingservice.net/' hidden>https://thesiswritingservice.net/</a>
+                        <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=b1896e6346009a185ccf07ed396b691279f9d760'></script>
+                        <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/890932/t/3"></script>*@
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav"><span></span><span></span><span></span></button>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+        </header>
+        <!-- Header End -->
+        <!-- Content
+        ============================================= -->
+        <div id="content" role="main">
+
+            <!-- Intro
+            ============================================= -->
+            <section id="home">
+                <div class="hero-wrap">
+                    <div class="hero-mask opacity-6 bg-dark"></div>
+                    <div class="hero-bg parallax" style="background-image:url('favicons/KhanForBackground.png')"></div>
+                    <div class="hero-content section d-flex fullscreen">
+                        <div class="container my-auto">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <p class="text-5 text-uppercase text-white ls-4 mb-2 mb-md-3">ORXAN MƏMMƏDƏLİ</p>
+                                    <div class="typed-strings">
+                                        <p>C# Proqramçı</p>
+                                        <p>Backend Proqramçı</p>
+                                        <p>.Net Proqramçı</p>
+                                    </div>
+                                    <h2 class="text-17 fw-600 text-white mb-2 mb-md-3"><span class="typed"></span></h2>
+                                    <p class="text-5 text-light">Şəxsi məlumatlarımın yer aldığı və eyni zamanda biliklərim əsasında hazırlamış olduğum tətbiqlərin qısa icmalını əks etdirən məlumat səhifəsinə xoş gəlmisiniz.</p>
+                                    <a href="#" class="btn btn-primary rounded-pill mt-3">CV-ni yüklə</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#about" class="scroll-down-arrow text-white smooth-scroll"><span class="animated"><i class="fa fa-chevron-down"></i></span></a>
+                    </div>
+                </div>
+            </section>
+            <!-- Intro end -->
+            <!-- About
+            ============================================= -->
+            <section id="about" class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 text-center mb-5 mb-lg-0 wow fadeInLeft"> <img class="img-fluid shadow-md rounded d-inline-block" src="~/images/images-about-me.png" alt=""> </div>
+                        <div class="col-lg-7 text-center text-lg-start ps-lg-4 wow fadeInRight">
+                            <h2 class="fw-600 mb-4">Haqqımda</h2>
+                            <h3 class="text-6 mb-4"><span class="text-primary fw-600">C#/Backend Proqramçı</span></h3>
+                            <p>Mən Məmmədəli Orxan Bəhram oğlu. Microsoft firmasının m&uuml;asir proqramla dili olan C#(sharp) &uuml;zrə Junior Developer-əm.</p>
+                            <p>Bakalavr təhsilimi <strong>PANM (Proseslərin avtomatlaşdırılması mühəndisliyi) TEMPUS</strong>, Magistr təhsilimi isə <strong>IT (İnformasiya Texnologiyaları və sistemləri mühəndisliyi)</strong> &uuml;zrə almışam. Magistr d&ouml;vr&uuml;ndə Microsoft firmasının məşhur proqramlama dili olan C# biliklərini daha yaxşı mənimsəmək &uuml;&ccedil;&uuml;n proqramlama kursunda bilik və bacarıqlarımın artırılmasına &ccedil;alışmışam. N&ouml;vbəti mərhələdə m&uuml;xtəlif platformalar ilə cari tarixə qədər yeni biliklər &ouml;yrənməyə davam edirəm.&nbsp;<br />Əldə etdiyim biliklər &uuml;zrə <em><strong>Desktop App (windows)</strong></em>, <em><strong>Web App (windows və Cross platform)&nbsp;</strong></em>olmaqla proqram təminatları hazırlamaq cəhdləri etmişəm. G&uuml;n&uuml;m&uuml;z&uuml;n tələblərini nəzərə alaraq hazırlamağa &uuml;st&uuml;nl&uuml;k verdiyim tətbiqlər veb tətbiqlər olmaqla həm windows, həm də cross platrform olmaqla layihələr hazırlamışam və davam edirəm.<br /><br />Mənimlə əlaqəli digər məlumatlara daha dəqiq formada səhifə &uuml;zərindən baxa, ehtiyac yarandığı təqdirdə əlaqə b&ouml;lməsindən əlaqə saxlaya bilərsiniz.&nbsp;&nbsp;</p>
+                            <div class="brands-grid separator-border my-sm-4">
+                                <div class="row">
+                                    <div class="col-sm-4 py-4 py-sm-2">
+                                        <div class="featured-box text-center">
+                                            <h4 class="text-8 text-muted mb-0">
+                                                <span class="counter" data-from="0" data-to="2019">2019</span> -
+                                                <script>
+                                                    var CurrentYear = new Date().getFullYear()
+                                                    document.write(CurrentYear)</script>
+                                            </h4>
+                                            <p class="mb-0">Proqramlama təcrübəsi </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 py-4 py-sm-2">
+                                        <div class="featured-box text-center">
+                                            <h4 class="text-8 text-muted mb-0"><span class="counter" data-from="0" data-to="4">4</span>+</h4>
+                                            <p class="mb-0">Hazırlanmış tətbiq</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 py-4 py-sm-2">
+                                        <div class="featured-box text-center">
+                                            <h4 class="text-8 text-muted mb-0"><span class="counter" data-from="0" data-to="2">2</span></h4>
+                                            <p class="mb-0">Müştəriyə təqdimat</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <a class="btn btn-secondary rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#about-us-details" href="#">Ətraflı</a> --> <a href="#portfolio" class="btn btn-link smooth-scroll mt-3 px-4">Hazırlanmış tətbiqlər<span class="text-1 ms-2"><i class="fas fa-chevron-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About end -->
+            <!-- Services
+            ============================================= -->
+            <section id="services" class="section bg-light">
+                <div class="container">
+                    <!-- Heading -->
+                    <div class="row mb-4 wow fadeIn">
+                        <div class="col-lg-9 col-xl-8 mx-auto text-center">
+                            <h2 class="fw-600 mb-3">Təhsil</h2>
+                            <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
+                            <p class="text-4 text-muted">Universitet təhsili; Ənənəvi və onlayn kurslar</p>
+                        </div>
+                    </div>
+                    <!-- Heading End -->
+
+                    <div class="row g-4 text-center" style="  justify-content: center;">
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-university"></i> </div>
+                                <h3 class="mb-3">Azərbaycan Texniki Universiteti</h3>
+                                <h6 class="mb-3">Bakalavr (2013-2017)</h6>
+                                <p class="text-muted mb-0">Proseslərin avtomatlaşdırılması mühəndisliyi (TEMPUS)</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-university"></i> </div>
+                                <h3 class="mb-3">Azərbaycan Dövlət Neft və Sənaye Universiteti</h3>
+                                <h6 class="mb-3">Magistr (2017-2019)</h6>
+                                <p class="text-muted mb-0">İdarəetmədə informasiya sistemləri</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-certificate"></i> </div>
+                                <h3 class="mb-3">Orient ITC</h3>
+                                <h6 class="mb-3">İxtisaslaşma Kursu (12.06.2018 - 10.12.2018)</h6>
+                                <p class="text-muted mb-0">
+                                    * 96 saatlıq C# proqram təlimi
+                                    * Təlimçi: Ehtiram Hacıxanov, Direktor: Fuad Paşabəyli
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-atlas"></i> </div>
+                                <h3 class="mb-3">MVC Proje Kampı </h3>
+                                <h6 class="mb-3">Onlayn kurs (2021)</h6>
+                                <p class="text-muted mb-0">N Tier Architect əsasında 3 panelli Blog</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-atlas"></i> </div>
+                                <h3 class="mb-3">Asp.Net Core 5.0 Proje Kampı</h3>
+                                <h6 class="mb-3">Onlayn kurs (2021)</h6>
+                                <p class="text-muted mb-0">N Tier Architect əsasında 3 panelli Blog</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr />
+                <br>
+                <div class="container">
+                    <!-- Heading -->
+                    <div class="row mb-4 wow fadeIn">
+                        <div class="col-lg-9 col-xl-8 mx-auto text-center">
+                            <h2 class="fw-600 mb-3">Təcrübə</h2>
+                            <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
+                            <p class="text-4 text-muted">Qeyri-ixtisas və İxtisas</p>
+                        </div>
+                    </div>
+                    <!-- Heading End -->
+
+                    <div class="row g-4 text-center" style="  justify-content: center;">
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-chalkboard-teacher"></i> </div>
+                                <h3 class="mb-3">
+                                    Türkiyə Diyanət Vəqfi Bakı Türk Liseyi nəznində təhsis edilmiş “Hünər/Hilal Kursu”
+                                </h3>
+                                <h6 class="mb-3">Ofis işçisi / Qeydiyyatçı (10.2018 - 09.2019)</h6>
+                                <p class="text-muted mb-0">Ofis daxili işlərin icrası və texniki məsələrin həlli</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-users-cog"></i> </div>
+                                <h3 class="mb-3">Türkiyə Diyanət Vəqfi Bakı Türk Liseyi</h3>
+                                <h6 class="mb-3">Operator / Kompüter mühəndisi (09.2019 - 10.2021)</h6>
+                                <p class="text-muted mb-0">Nəşriyyat, Dizayn və İmtahan şöbə rəhbəri. (<i>İmtahanların təşkili və emalı. Dizayn xidmətləri. Texniki məsələlərin həlli.</i>)</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fab fa-microsoft"></i> </div>
+                                <h3 class="mb-3">Türkiyə Diyanət Vəqfi Bakı Türk Liseyi</h3>
+                                <h6 class="mb-3">C# / Veb Proqramçı (10.2021 - davam edir)</h6>
+                                <p class="text-muted mb-0">Liseyin tabeliyində olan hazırlıq kursu üçün TSA və LER sistemlərinin hazırlanması və dəstəklənməsi.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 wow ">
+                            <div class="featured-box bg-white text-center rounded shadow-sm py-5 px-4">
+                                <div class="featured-box-icon text-primary mt-2"> <i class="fas fa-tasks"></i> </div>
+                                <h3 class="mb-3">Freelancer </h3>
+                                <h6 class="mb-3">(2019 - Davam edir)</h6>
+                                <p class="text-muted mb-0">Biliklərin təkmilləşməsi üçün Windows və Cross platform veb tətbiqlərin hazırlanması</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Services end -->
+            <!-- Why Choose
+            ============================================= -->
+            <section id="why-choose" class="section">
+                <div class="container">
+                    <!-- Heading -->
+                    <div class="row mb-5 wow fadeIn">
+                        <div class="col-lg-9 col-xl-8 mx-auto text-center">
+                            <h2 class="fw-600 mb-3">Bilik və Bacarıqlar</h2>
+                            <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
+                            <p class="text-4 text-muted">Ümumi və Proqramlama bilikləri</p>
+
+                        </div>
+                    </div>
+                    <!-- Heading End -->
+
+                    <div class="row justify-content-center mb-md-4 wow fadeInUp">
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/c-sharp.png" style="max-width:45px"> </div>
+                                <h3>C#</h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">90%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/oop-2.jpg" style="max-width:60px"> </div>
+                                <h3>OOP</h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">75%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/database.png" style="max-width:45px"> </div>
+                                <h3>SQL Server (MSSQL)</h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">70%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/ado.png" style="max-width:45px"> </div>
+                                <h3>Ado.NET</h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">50%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/object-database.png" style="max-width:45px"> </div>
+                                <h3>ORM (Entity Framework)</h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">90%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/net.png" style="max-width:45px"> </div>
+                                <h3>ASP.NET MVC</h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">90%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/core.png" style="max-width:45px"> </div>
+                                <h3>ASP.NET MVC Core 5.0 </h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">90%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/api.png" style="max-width:45px"> </div>
+                                <h3>Web API </h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">60%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4 mb-5">
+                            <div class="featured-box style-3">
+                                <div class="featured-box-icon text-primary border rounded-circle"> <img src="~/icons/coding.png" style="max-width:45px"> </div>
+                                <h3>HTLM5 & CSS3</h3>
+                                <p class="fw-500 text-start mb-2"><span class="float-end">50%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 text-center wow fadeInLeft">
+                            <div class="hero-wrap section h-100 rounded shadow-lg p-5">
+                                <div class="hero-mask opacity-6 rounded"></div>
+                                <div class="hero-bg hero-bg-scroll rounded" style="background-image:url('./images/programmer.gif');"></div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6 align-self-center mt-5 mt-md-0 wow fadeInRight">
+                            <div class="px-lg-4">
+                                <h3 class="text-6 mb-3">Digər Biliklər</h3>
+                                <p class="fw-500 text-start mb-2">Dizayn <span class="float-end">40%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="fw-500 text-start mb-2">Corel Draw <span class="float-end">65%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="fw-500 text-start mb-2">MS Office <span class="float-end">90%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="fw-500 text-start">İngilis dili <span class="float-end">65%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <p class="fw-500 text-start">Türk dili <span class="float-end">90%</span></p>
+                                <div class="progress progress-sm mb-4">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Why Choose end -->
+            <!-- Promo Box
+            ============================================= -->
+            <section class="section bg-primary text-center">
+                <div class="container wow bounceIn">
+                    <p class="lead text-white">Əməkdaşlıq üçün uyğun imkanlar</p>
+                    <h2 class="text-10 text-white mb-4">Bu gün Yeni bir layihəyə başlayaq.</h2>
+                    <a href="#contact" class="btn btn-light rounded-pill shadow-none smooth-scroll mt-2 wow rubberBand" data-wow-delay="1.2s">Əlaqə</a>
+                </div>
+            </section>
+            <!-- Promo Box end -->
+            <!-- Portfolio
+            ============================================= -->
+            <section id="portfolio" class="section">
+                <div class="container">
+                    <!-- Heading -->
+                    <div class="row mb-5 wow fadeIn">
+                        <div class="col-lg-9 col-xl-8 mx-auto text-center">
+                            <h2 class="fw-600 mb-3">Layihələrim</h2>
+                            <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
+                            <p class="text-4 text-muted">Gündəlik iş xətalarından yayınmaq üçün ilk addım olaraq işlərinizi avtomatlaşdırmaqdan başlayın.</p>
+                        </div>
+                    </div>
+                    <!-- Heading End -->
+                    <!-- Filter Menu -->
+                    <ul class="portfolio-menu nav nav-pills text-uppercase justify-content-center border-bottom-0 mb-5 wow fadeInUp">
+                        <li class="nav-item"> <a data-filter="*" class="nav-link rounded-pill active" href="kenil.html">Hamısı</a></li>
+                        <li class="nav-item"> <a data-filter=".mvc" href="kenil.html" class="nav-link rounded-pill">MVC 5</a></li>
+                        <li class="nav-item"> <a data-filter=".net" href="kenil.html" class="nav-link rounded-pill">.Net 5 </a></li>
+                    </ul>
+                    <!-- Filter Menu end -->
+
+                    <div class="portfolio popup-ajax-gallery wow fadeInUp">
+                        <div class="row portfolio-filter g-4">
+
+                            <div class="col-sm-6 col-xl-6 mvc">
+                                <div class="portfolio-box rounded">
+                                    <div class="portfolio-img rounded">
+                                        <img class="img-fluid d-block" src="https://i.ibb.co/3M7mYTt/2021-06-24-22-19-50-Exam-And-Quiz-Running-Microsoft-Visual-Studio.png" alt="">
+                                        <div class="portfolio-overlay">
+                                            <a href="https://www.youtube.com/watch?v=iqnNOY3-buE&t=2s" target="_blank"></a>
+                                            <div class="portfolio-overlay-details">
+                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
+                                                <h5 class="text-white fw-400">Khan Exam</h5>
+                                                <span class="text-light">Veb səhifə və online imtahan sisteminin vəhtəti formatında hazırlanmışdır. (Demo versiyadır)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=iqnNOY3-buE&t=2s" target="_blank">Ətraflı</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-6 net">
+                                <div class="portfolio-box rounded">
+                                    <div class="portfolio-img rounded">
+                                        <img class="img-fluid d-block" src="https://i.ibb.co/NKd0mZ3/2021-06-25-13-43-49-Hilal-Kurslar-Bilet-Sat.jpg" alt="">
+                                        <div class="portfolio-overlay">
+                                            <a href="https://www.youtube.com/watch?v=M7a9Mg9JCX4&t=4s" target="_blank"></a>
+                                            <div class="portfolio-overlay-details">
+                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
+                                                <h5 class="text-white fw-400">Ticket Sales Application</h5>
+                                                <span class="text-light">Bilet satış proqramı (Əyani imtahan üçün bilet satışı məqsədi ilə hazırlanmışdır.)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=M7a9Mg9JCX4&t=4s" target="_blank">Ətraflı</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-6 net branding">
+                                <div class="portfolio-box rounded">
+                                    <div class="portfolio-img rounded">
+                                        <img class="img-fluid d-block" src="https://i.ibb.co/8cmVDwt/2021-09-03-20-54-15.png" alt="">
+                                        <div class="portfolio-overlay">
+                                            <a href="https://www.youtube.com/watch?v=NkFvKZOzIO0" target="_blank"></a>
+                                            <div class="portfolio-overlay-details">
+                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
+                                                <h5 class="text-white fw-400">Exam Result (L.E.R.)</h5>
+                                                <span class="text-light">İmtahan dəyərləndirmə sistemi (Əyani imtahanların seconik imtahan çıxdı faylının emal edilməsi üçün hazırlanmışdır.)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=NkFvKZOzIO0" target="_blank">Ətraflı</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-6 net">
+                                <div class="portfolio-box rounded">
+                                    <div class="portfolio-img rounded">
+                                        <img class="img-fluid d-block" src="https://i.ibb.co/G34HWkM/2021-07-03-18-32-24-Resume-Running-Microsoft-Visual-Studio-Administrator.png" class="img-responsive" alt="">
+                                        <div class="portfolio-overlay">
+                                            <a href="https://www.youtube.com/watch?v=PqFg7mE7DXA" target="_blank"></a>
+                                            <div class="portfolio-overlay-details">
+                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
+                                                <h5 class="text-white fw-400">Khan Resume</h5>
+                                                <span class="text-light">Online CV sistemi (CV üzərində olan məlumatların və onlara əlavə olaraq portfellərin nümayişi üçün hazırlanmışdır.)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=PqFg7mE7DXA" target="_blank">Ətraflı</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Portfolio end -->
+            <!-- Clients
+            ============================================= -->
+            <section id="clients" class="section">
+                <div class="container">
+
+                    <!-- Heading -->
+                    <div class="row mb-5 wow fadeIn">
+                        <div class="col-lg-9 col-xl-8 mx-auto text-center">
+                            <h2 class="fw-600 mb-3">Müştərilər</h2>
+                            <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
+                            <!--<p class="text-4 text-muted">xxx.</p>-->
+                        </div>
+                    </div>
+                    <!-- Heading End -->
+
+                    <div class="row wow fadeInUp">
+                        <div class="col-lg-9 mx-auto">
+                            <div class="owl-carousel owl-theme" data-autoplay="true" data-loop="true" data-nav="true" data-margin="30" data-slideby="1" data-stagepadding="5" data-items-xs="1" data-items-sm="1" data-items-md="1" data-items-lg="1" id="ClientApiData">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Clients end -->
+            <!-- Contact
+            ============================================= -->
+            <section id="contact" class="section">
+                <div class="container">
+                    <!-- Heading -->
+                    <div class="row mb-5 wow fadeIn">
+                        <div class="col-lg-9 col-xl-8 mx-auto text-center">
+                            <h2 class="fw-600 mb-3">Əlaqə</h2>
+                            <hr class="heading-separator-line bg-primary opacity-10 mx-auto">
+                        </div>
+                    </div>
+                    <!-- Heading End -->
+                    <!-- Contact Form -->
+                    <div class="row wow fadeInUp">
+                        <div class="col-lg-10 col-xl-9 mx-auto">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48625.60582524108!2d49.776006019715005!3d40.384468168275916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d8c33c62a3f%3A0x77807ca915edd570!2sYasamal%2C%20Bak%C3%BC%2C%20Azerbaycan!5e0!3m2!1str!2s!4v1622388676969!5m2!1str!2s" width="100%" height="415" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <!-- Contact Form End -->
+
+                    <div class="brands-grid separator-border h-100 mt-5">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="featured-box text-center my-3 my-md-0 wow bounceIn">
+                                    <div class="featured-box-icon text-light"> <i class="fas fa-map-marker-alt"></i></div>
+                                    <h3 class="text-uppercase">Ünvan</h3>
+                                    <p class="text-muted mb-0">Azərbaycan, Bakı </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="featured-box text-center my-3 my-md-0 wow bounceIn">
+                                    <div class="featured-box-icon text-light"> <i class="fas fa-phone-alt"></i> </div>
+                                    <h3 class="text-uppercase">Mobil</h3>
+                                    <p class="text-muted mb-0">+(994)55 821 61 23</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="featured-box text-center my-3 my-md-0 wow bounceIn">
+                                    <div class="featured-box-icon text-light"> <i class="fas fa-envelope"></i> </div>
+                                    <h3 class="text-uppercase">Email</h3>
+                                    <p class="text-muted mb-0"><a href="mailto:memmedeli.orxan.om@gmail.com">memmedeli.orxan.om@gmail.com</a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact end -->
+
+        </div>
+        <!-- Content end -->
+        <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="section bg-dark footer-text-light">
+            <div class="container">
+                <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3 wow bounceIn">
+                    <!-- <li class="social-icons-twitter"><a data-bs-toggle="tooltip" href="https://twitter.com/harnishdesign/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li class="social-icons-facebook"><a data-bs-toggle="tooltip" href="http://www.facebook.com/harnishdesign/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="social-icons-linkedin"><a data-bs-toggle="tooltip" href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="social-icons-dribbble"><a data-bs-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a></li> -->
+                    <li class="social-icons-github"><a data-bs-toggle="tooltip" href="https://github.com/OrxanMemmedeli" target="_blank" title="GitHub"><i class="fab fa-github"></i></a></li>
+                </ul>
+                <p class="text-muted text-center">Copyright &copy; 2021 <a href="#">Khan</a>. All Rights Reserved.</p>
+                <!-- <ul class="nav text-2 justify-content-center wow fadeIn">
+                  <li class="nav-item"> <a class="nav-link" data-bs-toggle="modal" data-bs-target="#terms-policy" href="#">Terms &amp; Policy</a></li>
+                  <li class="nav-item"> <a class="nav-link" data-bs-toggle="modal" data-bs-target="#disclaimer" href="#">Disclaimer</a></li>
+                </ul> -->
+
+            </div>
+        </footer>
+        <!-- Footer end -->
+
+    </div>
+    <!-- Document Wrapper end -->
+    <!-- Back to Top
+    ============================================= -->
+    <a id="back-to-top" class="rounded" data-bs-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- About more Modal
+    ================================== -->
+    <div id="about-us-details" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">About Me More</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>I combine our passion for design focused in people with advanced development technologies. <strong class="fw-600">350+ clients</strong> have procured exceptional results and happiness while working with me.</p>
+                    <div class="featured-box style-1">
+                        <div class="featured-box-icon text-primary"> <i class="far fa-paper-plane"></i></div>
+                        <h4>Our Mission</h4>
+                        <p>Quidam lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. lisque persius interesset his et, in quot quidam mea essent possim iriure.</p>
+                    </div>
+                    <div class="featured-box style-1">
+                        <div class="featured-box-icon text-primary"> <i class="far fa-eye"></i></div>
+                        <h4>Our Vision</h4>
+                        <p>Quidam lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. lisque persius interesset his et, in quot quidam mea essent possim iriure.</p>
+                    </div>
+                    <div class="featured-box style-1">
+                        <div class="featured-box-icon text-primary"> <i class="far fa-thumbs-up"></i></div>
+                        <h4>Our Goal</h4>
+                        <p>Quidam lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure. lisque persius interesset his et, in quot quidam mea essent possim iriure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About more Modal End -->
+    <!-- Terms & Policy Modal
+    ================================== -->
+    <div id="terms-policy" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Terms &amp; Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <h3 class="mb-3 mt-4 mt-4">Terms of Use</h3>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Simply dummy text of the printing and typesetting industry.</p>
+                    <h5 class="text-4 mt-4">Part I &ndash; Information Kenil collects and controls</h5>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h5 class="text-4 mt-4">Part II &ndash; Information that Kenil processes on your behalf</h5>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h5 class="text-4 mt-4">Part III &ndash; General</h5>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h3 class="mb-3 mt-4">Privacy Policy</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    <ol class="lh-lg">
+                        <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
+                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
+                        <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Terms & Policy Modal End -->
+    <!-- Disclaimer Modal
+    ================================== -->
+    <div id="disclaimer" class="modal fade" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Copyright &amp; Disclaimer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    <ul class="lh-lg">
+                        <li>Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>In quot quidam persequeris vim, ad mea essent possim iriure. Quidam lisque persius interesset his et.</li>
+                        <li>Quidam lisque persius interesset his et, Lisque persius interesset his et.</li>
+                        <li>Interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>Persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                        <li>Quot quidam persequeris vim Quidam lisque persius interesset his et, Lisque persius interesset his et, in quot quidam persequeris vim, ad mea essent possim iriure.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Disclaimer Modal End -->
+    <!-- JavaScript -->
+    <script src="~/js/jquery-jquery.min.js"></script>
+    <script src="~/js/js-bootstrap.bundle.min.js"></script>
+    <!-- Easing -->
+    <script src="~/js/jquery.easing-jquery.easing.min.js"></script>
+    <!-- Appear -->
+    <script src="~/js/jquery.appear-jquery.appear.min.js"></script>
+    <!-- Images Loaded -->
+    <script src="~/js/imagesloaded-imagesloaded.pkgd.min.js"></script>
+    <!-- Counter -->
+    <script src="~/js/jquery.countTo-jquery.countTo.min.js"></script>
+    <!-- Parallax Bg -->
+    <script src="~/js/parallaxie-parallaxie.min.js"></script>
+    <!-- Typed -->
+    <script src="~/js/typed-typed.min.js"></script>
+    <!-- WOW animation -->
+    <script src="~/js/wow-wow.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="~/js/owl.carousel-owl.carousel.min.js"></script>
+    <!-- isotope Portfolio Filter -->
+    <script src="~/js/isotope-isotope.pkgd.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="~/js/magnific-popup-jquery.magnific-popup.min.js"></script>
+    <!-- Style Switcher -->
+    <script src="~/js/4812-js-switcher.min.js"></script>
+    <!-- Custom Script -->
+    <script src="~/js/5412-js-theme.js"></script>
+
+    <script>
+
+        //fetch request functions
+        function getClientItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayClientItems(data));
+        };
+        function getInfoItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayInfoItems(data));
+        };
+        function getAboutItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayAboutItems(data));
+        };
+        function getEducationItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayEducationItems(data));
+        };
+        function getExperienceItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayExperienceItems(data));
+        };
+        function getSkillItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displaySkillItems(data));
+        };
+        function getKnowledgeItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayKnowledgeItems(data));
+        };
+        function getProjectItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayProjectItems(data));
+        };
+        function getContactItems(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayContactItems(data));
+        };
+
+        //fetch request to display functions
+        function _displayClientItems(data) {
+            let ClientApiBody = "";
+
+            $.each(data, (index, value) => {
+                ClientApiBody += `<div class="item text-center px-5"><span class="text-9 text-muted opacity-3"></span><img class="img-fluid d-inline-block w-auto rounded-circle shadow-sm border" src="${value.logoURL}" style="width:350px; height:350px" alt=""> <strong class="d-block fw-500">${value.name}</strong> <span class="text-muted text-2">${value.description}</span></div>`;
+                ClientApiBody += `</br>`;
+            });
+
+            $("#ClientApiData").html(ClientApiBody);
+
+
+
+
+        };
+
+
+        getClientItems("https://localhost:44322/api/customer");
+        getInfoItems("");
+        getAboutItems("");
+        getEducationItems("");
+        getExperienceItems("");
+        getSkillItems("");
+        getKnowledgeItems("");
+        getProjectItems("");
+        getContactItems("");
+
+
+    </script>
+</body>
+</html>
+

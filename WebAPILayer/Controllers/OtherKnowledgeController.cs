@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPILayer.Controllers
 {
@@ -18,6 +19,13 @@ namespace WebAPILayer.Controllers
         public OtherKnowledgeController(IOtherKnowledgeService otherKnowledgeService)
         {
             _otherKnowledgeService = otherKnowledgeService;
+        }
+
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<OtherKnowledge>>> Get()
+        {
+            return await _otherKnowledgeService.GetAll(x => x.Status == true);
         }
 
         [HttpGet]

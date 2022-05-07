@@ -15,9 +15,6 @@ namespace OrkhanMammadali.Models.ViewModel
         public string Description { get; set; }
         public string FileURL { get; set; }
 
-        [NotMapped]
-        public IFormFile File { get; set; }
-
         public Guid CategoryID { get; set; }
     }
 }

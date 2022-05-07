@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace OrkhanMammadali.Controllers
 {
-    public class SkillController : Controller
+    public class ProjectController : Controller
     {
         private readonly IConfiguration _configuration;
         private readonly string url;
-        public SkillController(IConfiguration configuration)
+        public ProjectController(IConfiguration configuration)
         {
             _configuration = configuration;
             url = _configuration["MyAPI"];
@@ -25,9 +25,9 @@ namespace OrkhanMammadali.Controllers
         public async Task<IActionResult> Index()
         {
             var httpclient = new HttpClient();
-            var responseMessage = await httpclient.GetAsync(url + "api/Skill");
+            var responseMessage = await httpclient.GetAsync(url + "api/Project");
             var jsonString = await responseMessage.Content.ReadAsStringAsync();
-            var values = JsonConvert.DeserializeObject<List<SkillViewModel>>(jsonString);
+            var values = JsonConvert.DeserializeObject<List<ProjectViewModel>>(jsonString);
             return View(values);
         }
 
@@ -36,12 +36,12 @@ namespace OrkhanMammadali.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(SkillViewModel model)
+        public async Task<IActionResult> Create(ProjectViewModel model)
         {
             var httpclient = new HttpClient();
             var jsonModel = JsonConvert.SerializeObject(model);
             StringContent content = new StringContent(jsonModel, Encoding.UTF8, "application/json");
-            var responseMessage = await httpclient.PostAsync(url + "api/Skill", content);
+            var responseMessage = await httpclient.PostAsync(url + "api/Project", content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -54,11 +54,11 @@ namespace OrkhanMammadali.Controllers
         {
 
             var httpclient = new HttpClient();
-            var responseMessage = await httpclient.GetAsync(url + "api/Skill/" + id);
+            var responseMessage = await httpclient.GetAsync(url + "api/Project/" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonModel = await responseMessage.Content.ReadAsStringAsync();
-                var value = JsonConvert.DeserializeObject<SkillViewModel>(jsonModel);
+                var value = JsonConvert.DeserializeObject<ProjectViewModel>(jsonModel);
                 return View(value);
             }
 
@@ -66,7 +66,7 @@ namespace OrkhanMammadali.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Guid id, SkillViewModel model)
+        public async Task<IActionResult> Edit(Guid id, ProjectViewModel model)
         {
             if (id != model.Id)
             {
@@ -75,7 +75,7 @@ namespace OrkhanMammadali.Controllers
             var httpclient = new HttpClient();
             var jsonModel = JsonConvert.SerializeObject(model);
             StringContent content = new StringContent(jsonModel, Encoding.UTF8, "application/json");
-            var responseMessage = await httpclient.PutAsync(url + "api/Skill/" + model.Id, content);
+            var responseMessage = await httpclient.PutAsync(url + "api/Project/" + model.Id, content);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -87,9 +87,8 @@ namespace OrkhanMammadali.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
-
             var httpclient = new HttpClient();
-            var responseMessage = await httpclient.DeleteAsync(url + "api/Skill/" + id);
+            var responseMessage = await httpclient.DeleteAsync(url + "api/Project/" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");

@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,6 +19,13 @@ namespace WebAPILayer.Controllers
         public CategoryController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
+        }
+
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<Category>>> Get()
+        {
+            return await _categoryService.GetAll(x => x.Status == true);
         }
 
         [HttpGet]

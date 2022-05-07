@@ -1,20 +1,18 @@
-﻿@model OrkhanMammadali.Models.ViewModel.ProfilViewModel
+﻿@model OrkhanMammadali.Models.ViewModel.ProjectViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>Create</h1>
 
-<h4>ProfilViewModel</h4>
+<h4>ProjectViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" value="@Model.Id" />
-
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
@@ -27,21 +25,21 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <textarea class="form-control" asp-for="Description"></textarea>
+                <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LogoURL" class="control-label"></label>
-                <input asp-for="LogoURL" class="form-control" type="url" />
-                <span asp-validation-for="LogoURL" class="text-danger"></span>
+                <label asp-for="FileURL" class="control-label"></label>
+                <input asp-for="FileURL" class="form-control" />
+                <span asp-validation-for="FileURL" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Pozition" class="control-label"></label>
-                <textarea id="editor" class="form-control" asp-for="Pozition"></textarea>
-                <span asp-validation-for="Pozition" class="text-danger"></span>
+                <label asp-for="CategoryID" class="control-label"></label>
+                <input asp-for="CategoryID" class="form-control" />
+                <span asp-validation-for="CategoryID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -51,8 +49,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts{
-
-    <script src="https://cdn.tiny.cloud/1/5fri9qvj8j8o609qcyj6pujpvy0yexezsf47t8wphcsbcnp1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="~/js/tiny-text-editor.js"></script>
-}

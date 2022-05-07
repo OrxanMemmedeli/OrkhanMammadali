@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DataAccessLayer.Contrete.Context;
 using EntityLayer.Concrete;
 using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPILayer.Controllers
 {
@@ -21,7 +22,12 @@ namespace WebAPILayer.Controllers
         {
             _aboutService = aboutService;
         }
-
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<About>>> Get()
+        {
+            return await _aboutService.GetAll(x => x.Status == true);
+        }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<About>>> GetAbouts()
         {

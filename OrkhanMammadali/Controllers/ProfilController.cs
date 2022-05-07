@@ -35,6 +35,7 @@ namespace OrkhanMammadali.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(ProfilViewModel model)
         {
@@ -50,12 +51,10 @@ namespace OrkhanMammadali.Controllers
             return View(model);
         }
 
+
+
         public async Task<IActionResult> Edit(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
             var httpclient = new HttpClient();
             var responseMessage = await httpclient.GetAsync(url + "api/Profil/" + id);
@@ -91,10 +90,7 @@ namespace OrkhanMammadali.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+    
 
             var httpclient = new HttpClient();
             var responseMessage = await httpclient.DeleteAsync(url + "api/Profil/" + id);

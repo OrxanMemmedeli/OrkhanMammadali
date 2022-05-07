@@ -35,6 +35,7 @@ namespace OrkhanMammadali.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(CVDocumentViewModel model)
         {
@@ -52,11 +53,6 @@ namespace OrkhanMammadali.Controllers
 
         public async Task<IActionResult> Edit(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var httpclient = new HttpClient();
             var responseMessage = await httpclient.GetAsync(url + "api/CvDocument/" + id);
             if (responseMessage.IsSuccessStatusCode)
@@ -91,11 +87,6 @@ namespace OrkhanMammadali.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var httpclient = new HttpClient();
             var responseMessage = await httpclient.DeleteAsync(url + "api/CvDocument/" + id);
             if (responseMessage.IsSuccessStatusCode)

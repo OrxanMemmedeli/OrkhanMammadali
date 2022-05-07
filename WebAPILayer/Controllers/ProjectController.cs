@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,6 +19,13 @@ namespace WebAPILayer.Controllers
         public ProjectController(IProjectService projectService)
         {
             _projectService = projectService;
+        }
+
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<Project>>> Get()
+        {
+            return await _projectService.GetAll(x => x.Status == true);
         }
 
         [HttpGet]

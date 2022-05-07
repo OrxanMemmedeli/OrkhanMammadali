@@ -58,7 +58,7 @@
             <nav class="primary-menu navbar navbar-expand-lg">
                 <div class="container position-relative h-100 flex-lg-column justify-content-lg-center px-3 p-lg-4">
                     <!-- Logo -->
-                    <a class="logo text-center d-lg-block mt-lg-3 mb-lg-4" href="#home" title=""> <img src="~/favicons/KHAN-row.png" alt="Kenil Patel"> </a>
+                    <a class="logo text-center d-lg-block mt-lg-3 mb-lg-4" href="#home" title="" id="info-icon">  </a>
                     <!-- Logo End -->
                     <hr class="d-none d-lg-block m-0 w-25">
                     <div id="header-nav" class="collapse navbar-collapse w-100">
@@ -103,17 +103,11 @@
                     <div class="hero-content section d-flex fullscreen">
                         <div class="container my-auto">
                             <div class="row">
-                                <div class="col-12 text-center">
-                                    <p class="text-5 text-uppercase text-white ls-4 mb-2 mb-md-3">ORXAN MƏMMƏDƏLİ</p>
-                                    <div class="typed-strings">
-                                        <p>C# Proqramçı</p>
-                                        <p>Backend Proqramçı</p>
-                                        <p>.Net Proqramçı</p>
-                                    </div>
-                                    <h2 class="text-17 fw-600 text-white mb-2 mb-md-3"><span class="typed"></span></h2>
-                                    <p class="text-5 text-light">Şəxsi məlumatlarımın yer aldığı və eyni zamanda biliklərim əsasında hazırlamış olduğum tətbiqlərin qısa icmalını əks etdirən məlumat səhifəsinə xoş gəlmisiniz.</p>
-                                    <a href="#" class="btn btn-primary rounded-pill mt-3">CV-ni yüklə</a>
-                                </div>
+                                <div class="col-12 text-center" id="info">
+
+                                </div>                                    
+                                <a href="#" class="btn btn-primary rounded-pill mt-3">CV-ni yüklə</a>
+
                             </div>
                         </div>
                         <a href="#about" class="scroll-down-arrow text-white smooth-scroll"><span class="animated"><i class="fa fa-chevron-down"></i></span></a>
@@ -769,6 +763,11 @@
                 .then(response => response.json())
                 .then(data => _displayInfoItems(data));
         };
+        function getInfoIcon(url) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => _displayInfoIcon(data));
+        };
         function getAboutItems(url) {
             fetch(url)
                 .then(response => response.json())
@@ -815,15 +814,29 @@
             });
 
             $("#ClientApiData").html(ClientApiBody);
+        };
+        function _displayInfoItems(data) {
+            let InfoApiBody = "";
 
+            $.each(data, (index, value) => {
+                InfoApiBody += `<p class="text-5 text-uppercase text-white ls-4 mb-2 mb-md-3" > ${value.name}</p ><div class="typed-strings"></div><h2 class="text-17 fw-600 text-white mb-2 mb-md-3"><span class="typed">${value.pozition}</span></h2><p class="text-5 text-light">${value.description}</p>`;
+                console.log(value.pozition);
+            });
+            $("#info").html(InfoApiBody);
+        };
+        function _displayInfoIcon(data) {
+            let IconApiBody = "";
 
+            $.each(data, (index, value) => {
+                IconApiBody += `<img src="${value.logoURL}" alt="Logo">`;
+            });
 
-
+            $("#info-icon").html(IconApiBody);
         };
 
-
-        getClientItems("https://localhost:44322/api/customer");
-        getInfoItems("");
+        getClientItems("https://localhost:44322/api/customer/get");
+        getInfoItems("https://localhost:44322/api/profil/get");
+        getInfoIcon("https://localhost:44322/api/profil/get");
         getAboutItems("");
         getEducationItems("");
         getExperienceItems("");

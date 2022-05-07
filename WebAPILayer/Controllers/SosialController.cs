@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,7 +20,12 @@ namespace WebAPILayer.Controllers
         {
             _sosialService = sosialService;
         }
-
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<Sosial>>> Get()
+        {
+            return await _sosialService.GetAll(x => x.Status == true);
+        }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Sosial>>> Getsosials()
         {

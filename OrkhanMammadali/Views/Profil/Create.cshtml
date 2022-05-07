@@ -11,8 +11,8 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
@@ -25,17 +25,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <textarea class="form-control" asp-for="Description"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LogoURL" class="control-label"></label>
-                <input asp-for="LogoURL" class="form-control" />
+                <input asp-for="LogoURL" class="form-control" type="url" />
                 <span asp-validation-for="LogoURL" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Pozition" class="control-label"></label>
-                <input asp-for="Pozition" class="form-control" />
+                <textarea id="editor" class="form-control" asp-for="Pozition"></textarea>
                 <span asp-validation-for="Pozition" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,3 +49,8 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts{
+
+    <script src="https://cdn.tiny.cloud/1/5fri9qvj8j8o609qcyj6pujpvy0yexezsf47t8wphcsbcnp1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="~/js/tiny-text-editor.js"></script>
+}

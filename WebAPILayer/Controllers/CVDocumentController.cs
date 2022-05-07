@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +25,13 @@ namespace WebAPILayer.Controllers
         public async Task<ActionResult<IEnumerable<CVDocument>>> GetcVDocuments()
         {
             return await _cVDocumentService.GetAll();
+        }
+
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<CVDocument>>> Get()
+        {
+            return await _cVDocumentService.GetAll(x => x.Status == true);
         }
 
         [HttpGet("{id}")]

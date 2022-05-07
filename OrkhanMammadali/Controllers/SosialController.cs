@@ -52,10 +52,6 @@ namespace OrkhanMammadali.Controllers
 
         public async Task<IActionResult> Edit(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
             var httpclient = new HttpClient();
             var responseMessage = await httpclient.GetAsync(url + "api/Sosial/" + id);
@@ -91,10 +87,6 @@ namespace OrkhanMammadali.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
             var httpclient = new HttpClient();
             var responseMessage = await httpclient.DeleteAsync(url + "api/Sosial/" + id);

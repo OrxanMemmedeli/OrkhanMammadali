@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,6 +21,12 @@ namespace WebAPILayer.Controllers
             _contactService = contactService;
         }
 
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<Contact>>> Get()
+        {
+            return await _contactService.GetAll(x => x.Status == true);
+        }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Contact>>> Getcontacts()

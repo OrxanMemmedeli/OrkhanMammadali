@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,6 +19,13 @@ namespace WebAPILayer.Controllers
         public EducationController(IEducationService educationService)
         {
             _educationService = educationService;
+        }
+
+        [HttpGet("[action]")]
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<Education>>> Get()
+        {
+            return await _educationService.GetAll(x => x.Status == true);
         }
 
         [HttpGet]

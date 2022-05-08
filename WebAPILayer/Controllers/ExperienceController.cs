@@ -25,7 +25,7 @@ namespace WebAPILayer.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Experience>>> Get()
         {
-            return await _experienceService.GetAll(x => x.Status == true);
+            return await _experienceService.GetAllTrue(x => x.Status == true);
         }
 
         [HttpGet]

@@ -15,5 +15,6 @@ namespace OrkhanMammadali.Models.ViewModel
         public string Spesiality { get; set; }
         public string IconName { get; set; }
         public string Degree { get; set; }
+        public int Order { get; set; } 
     }
 }

@@ -11,6 +11,7 @@ namespace EntityLayer.Concrete.Common
         public string End { get; set; }
         public string Spesiality { get; set; }
         public string IconName { get; set; }
+        public int? Order { get; set; } = 1;
 
     }
 }

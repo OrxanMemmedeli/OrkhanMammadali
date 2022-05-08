@@ -25,7 +25,8 @@ namespace WebAPILayer.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Education>>> Get()
         {
-            return await _educationService.GetAll(x => x.Status == true);
+            var educations = await _educationService.GetAllTrue(x => x.Status == true);
+            return educations;
         }
 
         [HttpGet]

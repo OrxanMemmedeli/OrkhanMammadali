@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
             return await  _educationDal.GetAll(filter);
         }
 
+        public async Task<List<Education>> GetAllTrue(Expression<Func<Education, bool>> filter)
+        {
+            return await _educationDal.GetAllTrue(filter);
+        }
+
         public async Task<Education>  GetById(Guid id)
         {
             return await  _educationDal.GetById(id);

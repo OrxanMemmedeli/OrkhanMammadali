@@ -15,6 +15,9 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Id)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Status)
@@ -45,6 +48,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
+            </td>           
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
@@ -70,6 +76,13 @@
             <td>
                 <a href="/Education/Edit/@item.Id">Edit</a> |
                 <a href="/Education/Delete/@item.Id" onclick="return confirm('Seçdiyiniz sətr silinəcək. Silinən məlumatların geri qaytarılması mümkün deyil. \nSətiri yənədə silmək istəyirsinizmi?')">Delete</a>
+
+                <a href="/Education/Up/@item.Id">Up</a>
+                @if (item.Order > 0)
+                {
+                    <span> - </span><a href="/Education/Down/@item.Id">Down</a>
+                }
+
             </td>
         </tr>
 }

@@ -10,6 +10,7 @@ namespace EntityLayer.Concrete
         public string Pozition { get; set; }
         public string Info { get; set; }
         public string Experience { get; set; }
+        public string ImageURL { get; set; }
         public int AppCount { get; set; }
         public int CustomerCount { get; set; }
     }

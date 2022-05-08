@@ -26,13 +26,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Info" class="control-label"></label>
-                <input asp-for="Info" class="form-control" />
+                <textarea id="editor" class="form-control" asp-for="Info" style="height:450px"></textarea>
                 <span asp-validation-for="Info" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Experience" class="control-label"></label>
                 <input asp-for="Experience" class="form-control" />
                 <span asp-validation-for="Experience" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageURL" class="control-label"></label>
+                <input asp-for="ImageURL" class="form-control" type="url" />
+                <span asp-validation-for="ImageURL" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AppCount" class="control-label"></label>
@@ -55,3 +60,8 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts{
+
+    <script src="https://cdn.tiny.cloud/1/5fri9qvj8j8o609qcyj6pujpvy0yexezsf47t8wphcsbcnp1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="~/js/tiny-text-editor.js"></script>
+}

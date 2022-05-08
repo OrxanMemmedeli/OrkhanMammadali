@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
             return await _experienceDal.GetAll(filter);
         }
 
+        public async Task<List<Experience>> GetAllTrue(Expression<Func<Experience, bool>> filter)
+        {
+            return await _experienceDal.GetAllTrue(filter);
+        }
+
         public async Task<Experience> GetById(Guid id)
         {
             return await _experienceDal.GetById(id);

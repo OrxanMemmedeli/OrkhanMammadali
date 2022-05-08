@@ -19,6 +19,11 @@
                 </label>
             </div>
             <div class="form-group">
+                <label asp-for="Order" class="control-label"></label>
+                <input asp-for="Order" class="form-control" />
+                <span asp-validation-for="Order" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Company" class="control-label"></label>
                 <input asp-for="Company" class="form-control" />
                 <span asp-validation-for="Company" class="text-danger"></span>
@@ -35,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Spesiality" class="control-label"></label>
-                <input asp-for="Spesiality" class="form-control" />
+                <textarea asp-for="Spesiality" class="form-control"></textarea>
                 <span asp-validation-for="Spesiality" class="text-danger"></span>
             </div>
             <div class="form-group">

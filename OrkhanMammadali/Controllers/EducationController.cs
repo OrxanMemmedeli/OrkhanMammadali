@@ -99,5 +99,53 @@ namespace OrkhanMammadali.Controllers
 
             return View();
         }
+
+        public async Task<IActionResult> Up(Guid id)
+        {
+            var httpclient = new HttpClient();
+            var responseMessage = await httpclient.GetAsync(url + "api/Education/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonModel = await responseMessage.Content.ReadAsStringAsync();
+                var value = JsonConvert.DeserializeObject<EducationViewModel>(jsonModel);
+                value.Order++;
+
+
+                var jsonModelPut = JsonConvert.SerializeObject(value);
+                StringContent contentPut = new StringContent(jsonModelPut, Encoding.UTF8, "application/json");
+                var responseMessagePut = await httpclient.PutAsync(url + "api/Education/" + value.Id, contentPut);
+                if (responseMessagePut.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Down(Guid id)
+        {
+            var httpclient = new HttpClient();
+            var responseMessage = await httpclient.GetAsync(url + "api/Education/" + id);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonModel = await responseMessage.Content.ReadAsStringAsync();
+                var value = JsonConvert.DeserializeObject<EducationViewModel>(jsonModel);
+                if (value.Order > 0)
+                {
+                    value.Order--;
+
+                    var jsonModelPut = JsonConvert.SerializeObject(value);
+                    StringContent contentPut = new StringContent(jsonModelPut, Encoding.UTF8, "application/json");
+                    var responseMessagePut = await httpclient.PutAsync(url + "api/Education/" + value.Id, contentPut);
+                    if (responseMessagePut.IsSuccessStatusCode)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -102,11 +102,11 @@
                     <div class="hero-bg parallax" style="background-image:url('favicons/KhanForBackground.png')"></div>
                     <div class="hero-content section d-flex fullscreen">
                         <div class="container my-auto">
-                            <div class="row">
+                            <div class="row" style="justify-content:center">
                                 <div class="col-12 text-center" id="info">
 
-                                </div>                                    
-                                <a href="#" class="btn btn-primary rounded-pill mt-3">CV-ni yüklə</a>
+                                </div>
+                                <a href="#" class="btn btn-primary rounded-pill mt-3" style="width:225px">CV-ni yüklə</a>
 
                             </div>
                         </div>
@@ -121,40 +121,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5 text-center mb-5 mb-lg-0 wow fadeInLeft"> <img class="img-fluid shadow-md rounded d-inline-block" src="~/images/images-about-me.png" alt=""> </div>
-                        <div class="col-lg-7 text-center text-lg-start ps-lg-4 wow fadeInRight">
-                            <h2 class="fw-600 mb-4">Haqqımda</h2>
-                            <h3 class="text-6 mb-4"><span class="text-primary fw-600">C#/Backend Proqramçı</span></h3>
-                            <p>Mən Məmmədəli Orxan Bəhram oğlu. Microsoft firmasının m&uuml;asir proqramla dili olan C#(sharp) &uuml;zrə Junior Developer-əm.</p>
-                            <p>Bakalavr təhsilimi <strong>PANM (Proseslərin avtomatlaşdırılması mühəndisliyi) TEMPUS</strong>, Magistr təhsilimi isə <strong>IT (İnformasiya Texnologiyaları və sistemləri mühəndisliyi)</strong> &uuml;zrə almışam. Magistr d&ouml;vr&uuml;ndə Microsoft firmasının məşhur proqramlama dili olan C# biliklərini daha yaxşı mənimsəmək &uuml;&ccedil;&uuml;n proqramlama kursunda bilik və bacarıqlarımın artırılmasına &ccedil;alışmışam. N&ouml;vbəti mərhələdə m&uuml;xtəlif platformalar ilə cari tarixə qədər yeni biliklər &ouml;yrənməyə davam edirəm.&nbsp;<br />Əldə etdiyim biliklər &uuml;zrə <em><strong>Desktop App (windows)</strong></em>, <em><strong>Web App (windows və Cross platform)&nbsp;</strong></em>olmaqla proqram təminatları hazırlamaq cəhdləri etmişəm. G&uuml;n&uuml;m&uuml;z&uuml;n tələblərini nəzərə alaraq hazırlamağa &uuml;st&uuml;nl&uuml;k verdiyim tətbiqlər veb tətbiqlər olmaqla həm windows, həm də cross platrform olmaqla layihələr hazırlamışam və davam edirəm.<br /><br />Mənimlə əlaqəli digər məlumatlara daha dəqiq formada səhifə &uuml;zərindən baxa, ehtiyac yarandığı təqdirdə əlaqə b&ouml;lməsindən əlaqə saxlaya bilərsiniz.&nbsp;&nbsp;</p>
-                            <div class="brands-grid separator-border my-sm-4">
-                                <div class="row">
-                                    <div class="col-sm-4 py-4 py-sm-2">
-                                        <div class="featured-box text-center">
-                                            <h4 class="text-8 text-muted mb-0">
-                                                <span class="counter" data-from="0" data-to="2019">2019</span> -
-                                                <script>
-                                                    var CurrentYear = new Date().getFullYear()
-                                                    document.write(CurrentYear)</script>
-                                            </h4>
-                                            <p class="mb-0">Proqramlama təcrübəsi </p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 py-4 py-sm-2">
-                                        <div class="featured-box text-center">
-                                            <h4 class="text-8 text-muted mb-0"><span class="counter" data-from="0" data-to="4">4</span>+</h4>
-                                            <p class="mb-0">Hazırlanmış tətbiq</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 py-4 py-sm-2">
-                                        <div class="featured-box text-center">
-                                            <h4 class="text-8 text-muted mb-0"><span class="counter" data-from="0" data-to="2">2</span></h4>
-                                            <p class="mb-0">Müştəriyə təqdimat</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <a class="btn btn-secondary rounded-pill mt-3" data-bs-toggle="modal" data-bs-target="#about-us-details" href="#">Ətraflı</a> --> <a href="#portfolio" class="btn btn-link smooth-scroll mt-3 px-4">Hazırlanmış tətbiqlər<span class="text-1 ms-2"><i class="fas fa-chevron-right"></i></span></a>
+                        <div class="col-lg-7 text-center text-lg-start ps-lg-4 wow fadeInRight" id="about-api">
+
                         </div>
+                        <a href="#portfolio" class="btn btn-link smooth-scroll mt-3 px-4">Hazırlanmış tətbiqlər<span class="text-1 ms-2"><i class="fas fa-chevron-right"></i></span></a>
                     </div>
                 </div>
             </section>
@@ -773,6 +743,7 @@
                 .then(response => response.json())
                 .then(data => _displayAboutItems(data));
         };
+
         function getEducationItems(url) {
             fetch(url)
                 .then(response => response.json())
@@ -833,17 +804,27 @@
 
             $("#info-icon").html(IconApiBody);
         };
+        function _displayAboutItems(data) {
+            let AboutApiBody = "";
 
-        getClientItems("https://localhost:44322/api/customer/get");
-        getInfoItems("https://localhost:44322/api/profil/get");
-        getInfoIcon("https://localhost:44322/api/profil/get");
-        getAboutItems("");
-        getEducationItems("");
-        getExperienceItems("");
-        getSkillItems("");
-        getKnowledgeItems("");
-        getProjectItems("");
-        getContactItems("");
+            $.each(data, (index, value) => {
+                AboutApiBody += `<h2 class="fw-600 mb-4">Haqqımda</h2><h3 class="text-6 mb-4"><span class="text-primary fw-600">${value.pozition}</span></h3>${value.info}<div class="brands-grid separator-border my-sm-4"><div class="row"><div class="col-sm-4 py-4 py-sm-2"><div class="featured-box text-center"><h4 class="text-8 text-muted mb-0"><span class="counter" data-from="0" data-to="${value.experience}">${value.experience}</span></h4><p class="mb-0">Proqramlama təcrübəsi </p></div></div><div class="col-sm-4 py-4 py-sm-2"><div class="featured-box text-center"><h4 class="text-8 text-muted mb-0"><span class="counter" data-from="0" data-to="${value.appCount}">${value.appCount}</span>+</h4><p class="mb-0">Hazırlanmış tətbiq</p></div></div><div class="col-sm-4 py-4 py-sm-2"><div class="featured-box text-center"><h4 class="text-8 text-muted mb-0"><span class="counter" data-from="0" data-to="${value.customerCount}">${value.customerCount}</span></h4><p class="mb-0">Müştəriyə təqdimat</p></div></div></div></div>`;
+            });
+            $("#about-api").html(AboutApiBody);
+        };
+
+
+
+    getClientItems("https://localhost:44322/api/customer/get");
+    getInfoItems("https://localhost:44322/api/profil/get");
+    getInfoIcon("https://localhost:44322/api/profil/get");
+    getAboutItems("https://localhost:44322/api/about/get");
+    getEducationItems("");
+    getExperienceItems("");
+    getSkillItems("");
+    getKnowledgeItems("");
+    getProjectItems("");
+    getContactItems("");
 
 
     </script>

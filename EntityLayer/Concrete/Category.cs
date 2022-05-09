@@ -12,6 +12,8 @@ namespace EntityLayer.Concrete
             this.Projects = new HashSet<Project>();
         }
         public string Name { get; set; }
+        public string Key { get; set; }
+        public int? Order { get; set; }
         public ICollection<Project> Projects { get; set; }
     }
 }

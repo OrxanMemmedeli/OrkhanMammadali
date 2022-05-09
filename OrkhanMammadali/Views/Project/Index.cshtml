@@ -1,66 +1,85 @@
 ﻿@model IEnumerable<OrkhanMammadali.Models.ViewModel.ProjectViewModel>
 
-    @{
-        ViewData["Title"] = "Project";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+@{
+    ViewData["Title"] = "Project";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <h1>Project</h1>
+<h1>Project</h1>
 
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FileURL)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.CategoryID)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FileURL)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CategoryID)
-                    </td>
-                    <td>
-                        <a href="/Project/Edit/@item.Id">Edit</a> |
-                        <a href="/Project/Delete/@item.Id" onclick="return confirm('Seçdiyiniz sətr silinəcək. Silinən məlumatların geri qaytarılması mümkün deyil. \nSətiri yənədə silmək istəyirsinizmi?')">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileURL)
+            </th>            <th>
+                @Html.DisplayNameFor(model => model.URLadress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a href="@item.FileURL" target="_blank">
+                    <img src="@item.FileURL" alt="Alternate Text" style="width:150px" />
+                </a>
+            </td>
+            <td>
+                <a href="@item.URLadress">url</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryViewModel.Name)
+            </td>
+            <td>
+                <a href="/Project/Edit/@item.Id">Edit</a> |
+                <a href="/Project/Delete/@item.Id" onclick="return confirm('Seçdiyiniz sətr silinəcək. Silinən məlumatların geri qaytarılması mümkün deyil. \nSətiri yənədə silmək istəyirsinizmi?')">Delete</a>
+
+                <a href="/Project/Up/@item.Id">Up</a>
+                @if (item.Order > 0)
+                {
+                    <span> - </span><a href="/Project/Down/@item.Id">Down</a>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

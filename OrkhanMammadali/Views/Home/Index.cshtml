@@ -230,80 +230,13 @@
                     </div>
                     <!-- Heading End -->
                     <!-- Filter Menu -->
-                    <ul class="portfolio-menu nav nav-pills text-uppercase justify-content-center border-bottom-0 mb-5 wow fadeInUp">
-                        <li class="nav-item"> <a data-filter="*" class="nav-link rounded-pill active" href="kenil.html">Hamısı</a></li>
-                        <li class="nav-item"> <a data-filter=".mvc" href="kenil.html" class="nav-link rounded-pill">MVC 5</a></li>
-                        <li class="nav-item"> <a data-filter=".net" href="kenil.html" class="nav-link rounded-pill">.Net 5 </a></li>
+                    <ul class="portfolio-menu nav nav-pills text-uppercase justify-content-center border-bottom-0 mb-5 wow fadeInUp" id="category-api">
+
                     </ul>
                     <!-- Filter Menu end -->
 
                     <div class="portfolio popup-ajax-gallery wow fadeInUp">
-                        <div class="row portfolio-filter g-4">
-
-                            <div class="col-sm-6 col-xl-6 mvc">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded">
-                                        <img class="img-fluid d-block" src="https://i.ibb.co/3M7mYTt/2021-06-24-22-19-50-Exam-And-Quiz-Running-Microsoft-Visual-Studio.png" alt="">
-                                        <div class="portfolio-overlay">
-                                            <a href="https://www.youtube.com/watch?v=iqnNOY3-buE&t=2s" target="_blank"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
-                                                <h5 class="text-white fw-400">Khan Exam</h5>
-                                                <span class="text-light">Veb səhifə və online imtahan sisteminin vəhtəti formatında hazırlanmışdır. (Demo versiyadır)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=iqnNOY3-buE&t=2s" target="_blank">Ətraflı</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-6 net">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded">
-                                        <img class="img-fluid d-block" src="https://i.ibb.co/NKd0mZ3/2021-06-25-13-43-49-Hilal-Kurslar-Bilet-Sat.jpg" alt="">
-                                        <div class="portfolio-overlay">
-                                            <a href="https://www.youtube.com/watch?v=M7a9Mg9JCX4&t=4s" target="_blank"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
-                                                <h5 class="text-white fw-400">Ticket Sales Application</h5>
-                                                <span class="text-light">Bilet satış proqramı (Əyani imtahan üçün bilet satışı məqsədi ilə hazırlanmışdır.)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=M7a9Mg9JCX4&t=4s" target="_blank">Ətraflı</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-6 net branding">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded">
-                                        <img class="img-fluid d-block" src="https://i.ibb.co/8cmVDwt/2021-09-03-20-54-15.png" alt="">
-                                        <div class="portfolio-overlay">
-                                            <a href="https://www.youtube.com/watch?v=NkFvKZOzIO0" target="_blank"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
-                                                <h5 class="text-white fw-400">Exam Result (L.E.R.)</h5>
-                                                <span class="text-light">İmtahan dəyərləndirmə sistemi (Əyani imtahanların seconik imtahan çıxdı faylının emal edilməsi üçün hazırlanmışdır.)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=NkFvKZOzIO0" target="_blank">Ətraflı</a>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-xl-6 net">
-                                <div class="portfolio-box rounded">
-                                    <div class="portfolio-img rounded">
-                                        <img class="img-fluid d-block img-responsive" src="https://i.ibb.co/G34HWkM/2021-07-03-18-32-24-Resume-Running-Microsoft-Visual-Studio-Administrator.png" alt="">
-                                        <div class="portfolio-overlay">
-                                            <a href="https://www.youtube.com/watch?v=PqFg7mE7DXA" target="_blank"></a>
-                                            <div class="portfolio-overlay-details">
-                                                <p class="text-white text-6"><i class="fas fa-plus"></i></p>
-                                                <h5 class="text-white fw-400">Khan Resume</h5>
-                                                <span class="text-light">Online CV sistemi (CV üzərində olan məlumatların və onlara əlavə olaraq portfellərin nümayişi üçün hazırlanmışdır.)</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-secondary rounded-pill mt-3" href="https://www.youtube.com/watch?v=PqFg7mE7DXA" target="_blank">Ətraflı</a>
-                                </div>
-                            </div>
+                        <div class="row portfolio-filter g-4" id="project-api">
 
                         </div>
                     </div>
@@ -555,7 +488,6 @@
                 .then(response => response.json())
                 .then(data => _displayKnowledgeItems(data));
         };
-
         function getCategoryItems(url) {
             fetch(url)
                 .then(response => response.json())
@@ -566,7 +498,6 @@
                 .then(response => response.json())
                 .then(data => _displayProjectItems(data));
         };
-
         function getContactMap(url) {
             fetch(url)
                 .then(response => response.json())
@@ -656,7 +587,24 @@
             });
             $("#knowledge-api").html(KnowledgeApiBody);
         };
+        function _displayCategoryItems(data) {
+            let CetegoryApiBody = `<li class="nav-item"> <a data-filter="*" class="nav-link rounded-pill active" href="kenil.html">Hamısı</a></li>`;
 
+            $.each(data, (index, value) => {
+                CetegoryApiBody += `<li class="nav-item"> <a data-filter=".${value.key}" href="kenil.html" class="nav-link rounded-pill">${value.name}</a>`;
+            });
+            $("#category-api").html(CetegoryApiBody);
+        };
+        function _displayProjectItems(data) {
+            let ProjectApiBody = "";
+            console.log(value);
+            console.log(value.categoryViewModel);
+            $.each(data, (index, value) => {
+                console.log(value.categoryViewModel.key);
+                ProjectApiBody += `<div class="col-sm-6 col-xl-6 ${value.category.key}"><div class="portfolio-box rounded"><div class="portfolio-img rounded"><img class="img-fluid d-block" src="${value.fileURL}" alt=""><div class="portfolio-overlay"><a href="${value.uRLadress}" target="_blank"></a><div class="portfolio-overlay-details"><p class="text-white text-6"><i class="fas fa-plus"></i></p><h5 class="text-white fw-400">${value.name}</h5><span class="text-light">${value.description}</span></div></div></div><a class="btn btn-secondary rounded-pill mt-3" href="${value.uRLadress}" target="_blank">Ətraflı</a></div></div>`;
+            });
+            //$("#project-api").html(ProjectApiBody);
+        };
         function _displayContactMap(data) {
             let ContactApiMapBody = "";
 
@@ -691,8 +639,8 @@
         getExperienceItems("https://localhost:44322/api/experience/get");
         getSkillItems("https://localhost:44322/api/skill/get");
         getKnowledgeItems("https://localhost:44322/api/otherknowledge/get");
-        getCategoryItems("");
-        getProjectItems("");
+        getCategoryItems("https://localhost:44322/api/category/get");
+        getProjectItems("https://localhost:44322/api/project/get");
         getContactMap("https://localhost:44322/api/contact/get");
         getContactItems("https://localhost:44322/api/contact/get");
         getSosialItems("https://localhost:44322/api/sosial/get");

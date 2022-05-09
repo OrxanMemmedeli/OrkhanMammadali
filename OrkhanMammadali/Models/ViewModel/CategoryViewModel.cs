@@ -10,6 +10,9 @@ namespace OrkhanMammadali.Models.ViewModel
         public Guid Id { get; set; }
         public bool Status { get; set; }
         public string Name { get; set; }
+        public string Key { get; set; }
+        public int? Order { get; set; }
+        public List<ProjectViewModel> Projects { get; set; }
 
     }
 }

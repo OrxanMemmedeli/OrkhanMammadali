@@ -38,6 +38,16 @@ namespace BusinessLayer.Concrete
             return await  _projectDal.GetAll(filter);
         }
 
+        public async Task<List<Project>> GetAllWithCategory(Expression<Func<Project, bool>> filter)
+        {
+            return await _projectDal.GetAllWithCategory(filter);
+        }
+
+        public async Task<List<Project>> GetAllWithCategory()
+        {
+            return await _projectDal.GetAllWithCategory();
+        }
+
         public async Task<Project> GetById(Guid id)
         {
             return await  _projectDal.GetById(id);

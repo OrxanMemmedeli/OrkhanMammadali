@@ -52,8 +52,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Map)
+            <td style="max-width:355px; height:auto">
+                @Html.Raw(item.Map)
             </td>
             <td>
                 <a href="/Contact/Edit/@item.Id">Edit</a> |

@@ -20,28 +20,47 @@
                 @Html.DisplayNameFor(model => model.Status)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Key)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <a href="/Category/Edit/@item.Id">Edit</a> |
-                <a href="/Category/Delete/@item.Id" onclick="return confirm('Seçdiyiniz sətr silinəcək. Silinən məlumatların geri qaytarılması mümkün deyil. \nSətiri yənədə silmək istəyirsinizmi?')">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Order)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Key)
+                </td>
+                <td>
+                    <a href="/Category/Edit/@item.Id">Edit</a> |
+                    <a href="/Category/Delete/@item.Id" onclick="return confirm('Seçdiyiniz sətr silinəcək. Silinən məlumatların geri qaytarılması mümkün deyil. \nSətiri yənədə silmək istəyirsinizmi?')">Delete</a>
+
+                    <a href="/Category/Up/@item.Id">Up</a>
+                    @if (item.Order > 0)
+                    {
+                        <span> - </span><a href="/Category/Down/@item.Id">Down</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public string Description { get; set; }
         public string FileURL { get; set; }
         public string URLadress { get; set; }
+        public int? Order { get; set; }
 
         public Guid CategoryID { get; set; }
         public Category Category { get; set; }

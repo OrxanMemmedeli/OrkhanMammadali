@@ -25,13 +25,13 @@ namespace WebAPILayer.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Project>>> Get()
         {
-            return await _projectService.GetAll(x => x.Status == true);
+            return await _projectService.GetAllWithCategory(x => x.Status == true);
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Project>>> Getprojects()
         {
-            return await _projectService.GetAll();
+            return await _projectService.GetAllWithCategory();
         }
 
         [HttpGet("{id}")]

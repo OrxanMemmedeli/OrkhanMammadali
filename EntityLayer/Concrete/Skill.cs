@@ -10,5 +10,7 @@ namespace EntityLayer.Concrete
     public class Skill : MainKnowledge
     {
         public string fileURL { get; set; }
+        public int Width { get; set; }
+        public int Order { get; set; }
     }
 }

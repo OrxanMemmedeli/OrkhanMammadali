@@ -25,7 +25,7 @@ namespace WebAPILayer.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<OtherKnowledge>>> Get()
         {
-            return await _otherKnowledgeService.GetAll(x => x.Status == true);
+            return await _otherKnowledgeService.GetAllTrue(x => x.Status == true);
         }
 
         [HttpGet]

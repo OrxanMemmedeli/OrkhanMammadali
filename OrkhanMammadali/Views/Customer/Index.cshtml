@@ -47,7 +47,11 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LogoURL)
+            <td>
+                <a href="@item.LogoURL" target="_blank">
+                    <img src="@item.LogoURL" alt="Alternate Text" style="width:150px" />
+                </a>
+            </td>
             </td>
             <td>
                 <a href="/Customer/Edit/@item.Id">Edit</a> |

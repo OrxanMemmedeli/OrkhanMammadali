@@ -25,7 +25,7 @@ namespace WebAPILayer.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Skill>>> Get()
         {
-            return await _skillService.GetAll(x => x.Status == true);
+            return await _skillService.GetAllTrue(x => x.Status == true);
         }
 
         [HttpGet]

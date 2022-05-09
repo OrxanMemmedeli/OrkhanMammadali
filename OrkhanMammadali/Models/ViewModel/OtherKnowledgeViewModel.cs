@@ -11,5 +11,6 @@ namespace OrkhanMammadali.Models.ViewModel
         public bool Status { get; set; }
         public string Name { get; set; }
         public int Persent { get; set; }
+        public int Order { get; set; }
     }
 }

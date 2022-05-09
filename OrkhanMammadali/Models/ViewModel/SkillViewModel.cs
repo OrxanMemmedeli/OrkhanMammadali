@@ -15,5 +15,7 @@ namespace OrkhanMammadali.Models.ViewModel
         public int Persent { get; set; }
         public string fileURL { get; set; }
 
+        public int Width { get; set; }
+        public int Order { get; set; }
     }
 }

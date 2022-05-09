@@ -7,5 +7,6 @@ namespace EntityLayer.Concrete
 {
     public class OtherKnowledge : MainKnowledge
     {
+        public int Order { get; set; }
     }
 }

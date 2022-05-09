@@ -38,6 +38,11 @@ namespace BusinessLayer.Concrete
             return await _otherKnowledgeDal.GetAll(filter);
         }
 
+        public async Task<List<OtherKnowledge>> GetAllTrue(Expression<Func<OtherKnowledge, bool>> filter)
+        {
+            return await _otherKnowledgeDal.GetAllTrue(filter);
+        }
+
         public async Task<OtherKnowledge> GetById(Guid id)
         {
             return await _otherKnowledgeDal.GetById(id);

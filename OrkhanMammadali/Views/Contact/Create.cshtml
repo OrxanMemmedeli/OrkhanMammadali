@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Map" class="control-label"></label>
-                <input asp-for="Map" class="form-control" />
+                <textarea id="editor" class="form-control" asp-for="Map"></textarea>
                 <span asp-validation-for="Map" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,3 +49,8 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+@section Scripts{
+
+    <script src="https://cdn.tiny.cloud/1/5fri9qvj8j8o609qcyj6pujpvy0yexezsf47t8wphcsbcnp1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="~/js/tiny-text-editor.js"></script>
+}

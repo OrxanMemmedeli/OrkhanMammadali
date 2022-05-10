@@ -597,8 +597,7 @@
         };
         function _displayProjectItems(data) {
             let ProjectApiBody = "";
-            console.log(value);
-            console.log(value.categoryViewModel);
+            console.log(data);
             $.each(data, (index, value) => {
                 console.log(value.categoryViewModel.key);
                 ProjectApiBody += `<div class="col-sm-6 col-xl-6 ${value.category.key}"><div class="portfolio-box rounded"><div class="portfolio-img rounded"><img class="img-fluid d-block" src="${value.fileURL}" alt=""><div class="portfolio-overlay"><a href="${value.uRLadress}" target="_blank"></a><div class="portfolio-overlay-details"><p class="text-white text-6"><i class="fas fa-plus"></i></p><h5 class="text-white fw-400">${value.name}</h5><span class="text-light">${value.description}</span></div></div></div><a class="btn btn-secondary rounded-pill mt-3" href="${value.uRLadress}" target="_blank">Ətraflı</a></div></div>`;

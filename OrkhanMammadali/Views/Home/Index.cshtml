@@ -36,7 +36,7 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" type="text/css" href="~/css/css-stylesheet.css">
     <!-- Colors Css -->
-    <link id="color-switcher" type="text/css" rel="stylesheet" href="~/css/kenil-#">
+    @*<link id="color-switcher" type="text/css" rel="stylesheet" href="~/css/kenil-#">*@
 
 
 </head>
@@ -231,14 +231,11 @@
                     <!-- Heading End -->
                     <!-- Filter Menu -->
                     <ul class="portfolio-menu nav nav-pills text-uppercase justify-content-center border-bottom-0 mb-5 wow fadeInUp" id="category-api">
-
                     </ul>
                     <!-- Filter Menu end -->
 
-                    <div class="portfolio popup-ajax-gallery wow fadeInUp">
-                        <div class="row portfolio-filter g-4" id="project-api">
+                    <div class="portfolio popup-ajax-gallery wow fadeInUp" id="project-api">
 
-                        </div>
                     </div>
                 </div>
             </section>
@@ -513,11 +510,12 @@
                 .then(response => response.json())
                 .then(data => _displaySosialItems(data));
         };
-        function getCvDocItems(url) {
-            fetch(url)
-                .then(response => response.json())
-                .then(data => _displayCvDocItems(data));
-        };
+        //function getCvDocItems(url) {
+        //    fetch(url)
+        //        .then(response => response.json())
+        //        .then(data => _displayCvDocItems(data));
+        //};
+
 
         //fetch request to display functions
         function _displayClientItems(data) {
@@ -588,21 +586,22 @@
             $("#knowledge-api").html(KnowledgeApiBody);
         };
         function _displayCategoryItems(data) {
-            let CetegoryApiBody = `<li class="nav-item"> <a data-filter="*" class="nav-link rounded-pill active" href="kenil.html">Hamısı</a></li>`;
+            let CetegoryApiBody = `<li class="nav-item" ><a data-filter="*" class="nav-link rounded-pill active">Hamısı</a></li>`;
 
             $.each(data, (index, value) => {
-                CetegoryApiBody += `<li class="nav-item"> <a data-filter=".${value.key}" href="kenil.html" class="nav-link rounded-pill">${value.name}</a>`;
+                CetegoryApiBody += `<li class="nav-item" ><a data-filter=".${value.key}" class="nav-link rounded-pill">${value.name}</a></li>`;
             });
             $("#category-api").html(CetegoryApiBody);
         };
         function _displayProjectItems(data) {
-            let ProjectApiBody = "";
-            console.log(data);
+            let ProjectApiBody = `<div class="row portfolio-filter g-4">`;
             $.each(data, (index, value) => {
-                console.log(value.categoryViewModel.key);
-                ProjectApiBody += `<div class="col-sm-6 col-xl-6 ${value.category.key}"><div class="portfolio-box rounded"><div class="portfolio-img rounded"><img class="img-fluid d-block" src="${value.fileURL}" alt=""><div class="portfolio-overlay"><a href="${value.uRLadress}" target="_blank"></a><div class="portfolio-overlay-details"><p class="text-white text-6"><i class="fas fa-plus"></i></p><h5 class="text-white fw-400">${value.name}</h5><span class="text-light">${value.description}</span></div></div></div><a class="btn btn-secondary rounded-pill mt-3" href="${value.uRLadress}" target="_blank">Ətraflı</a></div></div>`;
+                ProjectApiBody += `<div class="col-sm-6 col-xl-6 ${value.category.key}"><div class="portfolio-box rounded"><div class="portfolio-img rounded"><img class="img-fluid d-block" src="${value.fileURL}" alt=""><div class="portfolio-overlay"><a href="${value.urLadress}" target="_blank"></a><div class="portfolio-overlay-details"><p class="text-white text-6"><i class="fas fa-plus"></i></p><h5 class="text-white fw-400">${value.name}</h5><span class="text-light">${value.description}</span></div></div></div><a class="btn btn-secondary rounded-pill mt-3" href="${value.urLadress}" target="_blank">Ətraflı</a></div></div>`;
             });
-            //$("#project-api").html(ProjectApiBody);
+
+            ProjectApiBody += `</div>`;
+
+            $("#project-api").html(ProjectApiBody);
         };
         function _displayContactMap(data) {
             let ContactApiMapBody = "";
@@ -643,7 +642,7 @@
         getContactMap("https://localhost:44322/api/contact/get");
         getContactItems("https://localhost:44322/api/contact/get");
         getSosialItems("https://localhost:44322/api/sosial/get");
-        getCvDocItems("");
+        //getCvDocItems("");
 
 
     </script>

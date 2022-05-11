@@ -18,6 +18,6 @@ namespace OrkhanMammadali.Models.ViewModel
         public int? Order { get; set; }
         public Guid CategoryID { get; set; }
 
-        public CategoryViewModel CategoryViewModel { get; set; }
+        public CategoryViewModel Category { get; set; }
     }
 }

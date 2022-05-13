@@ -11,9 +11,10 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" value="@Model.Id" />
+            <input type="hidden" asp-for="fileURL" value="@Model.fileURL" />
 
             <div class="form-group form-check">
                 <label class="form-check-label">
@@ -22,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="fileURL" class="control-label"></label>
-                <input asp-for="fileURL" class="form-control" />
+                <input asp-for="File" class="form-control" type="file" />
                 <span asp-validation-for="fileURL" class="text-danger"></span>
             </div>
             <div class="form-group">

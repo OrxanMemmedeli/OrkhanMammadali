@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using OrkhanMammadali.Models.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -40,9 +41,31 @@ namespace OrkhanMammadali.Controllers
         public async Task<IActionResult> Create(CVDocumentViewModel model)
         {
             var httpclient = new HttpClient();
-            var jsonModel = JsonConvert.SerializeObject(model);
-            StringContent content = new StringContent(jsonModel, Encoding.UTF8, "application/json");
-            var responseMessage = await httpclient.PostAsync(url + "api/CvDocument", content);
+            model.fileURL = "";
+            //var jsonModel = JsonConvert.SerializeObject(model);
+            //StringContent content = new StringContent(jsonModel, Encoding.UTF8, "application/json");
+
+
+            byte[] data;
+            using (var br = new BinaryReader(model.File.OpenReadStream()))
+            {
+                data = br.ReadBytes((int)model.File.OpenReadStream().Length);
+            }
+            ByteArrayContent bytes = new ByteArrayContent(data);
+
+            MultipartFormDataContent multiContent = new MultipartFormDataContent();
+
+
+            //var path = Path.GetFullPath(model.File.FileName);
+            //var fileContent = new StreamContent(System.IO.File.OpenRead(path));
+
+            multiContent.Add(bytes, "file", model.File.FileName);
+            multiContent.Add(new StringContent(model.Id.ToString(), Encoding.UTF8, "application/json"), "Id");
+            multiContent.Add(new StringContent(model.Status.ToString(), Encoding.UTF8, "application/json"), "Status");
+            multiContent.Add(new StringContent(model.fileURL, Encoding.UTF8, "application/json"), "fileURL");
+
+            var responseMessage = await httpclient.PostAsync(url + "api/CvDocument", multiContent);
+
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -96,5 +119,9 @@ namespace OrkhanMammadali.Controllers
 
             return View();
         }
+
+
+
+
     }
 }

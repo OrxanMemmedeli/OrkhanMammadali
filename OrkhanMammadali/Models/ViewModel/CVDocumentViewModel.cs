@@ -13,5 +13,7 @@ namespace OrkhanMammadali.Models.ViewModel
         public bool Status { get; set; }
         public string fileURL { get; set; }
 
+        [NotMapped]
+        public IFormFile File { get; set; }
     }
 }

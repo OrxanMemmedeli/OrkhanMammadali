@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DataAccessLayer.Contrete.Context
 {
-    public class MyContext : DbContext
+    public class MyContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

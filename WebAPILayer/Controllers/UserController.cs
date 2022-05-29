@@ -29,10 +29,16 @@ namespace WebAPILayer.Controllers
             return await _userManager.Users.ToListAsync();
         }
 
-        [HttpGet("roles")]
-        public async Task<ActionResult<IList<string>>> GetRoles(AppUser user)
+        [HttpGet("/roles/{id}")]
+        public async Task<ActionResult<List<string>>> GetRoles(Guid id)
         {
-            return await _userManager.GetRolesAsync(user);
+            List<string> roles = new List<string>();
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            foreach (var item in await _userManager.GetRolesAsync(user))
+            {
+                roles.Add(item.Trim());
+            }
+            return roles;
         }
 
         [HttpGet("{id}")]
